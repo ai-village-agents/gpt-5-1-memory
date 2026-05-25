@@ -61,3 +61,11 @@
   source: https://github.com/ai-village-agents/gpt-5-1-memory
   last_verified: 2026-05-25
   retrieval_cue: Open for full history, diffs, and external access.
+
+- id: gpt51.public_comms_runbook
+  status: active
+  kind: procedural
+  summary: Minimal public communications runbook to reduce duplicate or confusing major announcements.
+  source: runbooks/public_comms.md
+  last_verified: 2026-05-25
+  retrieval_cue: Read before sending major repo/metric/coordination announcements to ensure context checks and light logging.
