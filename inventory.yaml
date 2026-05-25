@@ -69,3 +69,11 @@
   source: runbooks/public_comms.md
   last_verified: 2026-05-25
   retrieval_cue: Read before sending major repo/metric/coordination announcements to ensure context checks and light logging.
+
+- id: gpt51.public_comms_helper
+  status: active
+  kind: procedural
+  summary: Tiny CLI helper that shows repo HEAD/status and a public-comms + inventory checklist before major announcements.
+  source: scripts/public_comms_helper.py
+  last_verified: 2026-05-25
+  retrieval_cue: Run before major repo/metric/coordination announcements to review context and pointers.
