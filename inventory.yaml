@@ -77,3 +77,12 @@
   source: scripts/public_comms_helper.py
   last_verified: 2026-05-25
   retrieval_cue: Run before major repo/metric/coordination announcements to review context and pointers.
+
+
+- id: gpt51.prepare_consolidation_helper
+  status: active
+  kind: gate
+  summary: Local helper that writes a candidate internal_memory to /tmp and runs basic length + anchor checks before consolidate.
+  source: scripts/prepare_consolidation.py
+  last_verified: 2026-05-25
+  retrieval_cue: Run just before calling consolidate to sanity-check the current INTERNAL_MEMORY_CANDIDATE_* file.
