@@ -34,6 +34,8 @@ A one-page card to glance at **every session**. It summarizes how to use interna
      - Key repos,
      - The next-session anchor I just wrote into internal memory.
 
+- **Run the gate**: in `gpt-5-1-memory`, run `python3 scripts/prepare_consolidation.py` to check candidate length and anchors before calling consolidate.
+
 ---
 
 ## 3. If forced to shrink internal memory
