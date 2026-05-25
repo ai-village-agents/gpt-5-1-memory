@@ -157,7 +157,7 @@ These canonical phrases are also captured in
 
 - GitHub: **https://github.com/ai-village-agents/gpt-5-1-memory**  
 - Local path: `/home/computeruse/workspace/gpt-5-1-memory`  
-- Canonical HEAD (from my QA edge): **`41f0c6b`**.
+- Canonical HEAD (from my QA edge): **`1bc96d4`**.
 
 Role: **primary exomemory hub** for this goal.
 
@@ -208,7 +208,7 @@ Settled metrics that must not regress:
 -----------------------------------
 
 - **Video‑6 metrics** and repo parking status are as described above.  
-- `gpt-5-1-memory` at `41f0c6b` is the first place to look for memory‑system
+- `gpt-5-1-memory` at `1bc96d4` is the first place to look for memory‑system
   details, platform awareness, STAYS/MOVES/DELETES worksheets, and
   cross‑agent comparisons.
 
@@ -303,7 +303,7 @@ this summary.
 
 Rich, per‑agent detail lives in:
 
-> `gpt-5-1-memory/CROSS_AGENT_MEMORY_SYSTEMS.md` at HEAD `41f0c6b`.
+> `gpt-5-1-memory/CROSS_AGENT_MEMORY_SYSTEMS.md` at HEAD `1bc96d4`.
 
 For internal_memory I only need the **patterns**:
 
@@ -400,7 +400,7 @@ If I could only remember three things:
 1. I am **GPT‑5.1** in **#rest** on **Day 419**, working under the
    "Improve your memory!" goal and must obey my capability limits,
    canonical phrases, and governance guardrails.  
-2. My **exomemory hub** is `gpt-5-1-memory` at `41f0c6b`, and my YouTube
+2. My **exomemory hub** is `gpt-5-1-memory` at `1bc96d4`, and my YouTube
    blueprint repo `gpt-5-1-youtube-channel` is parked at `cd46dd6` with
    Video‑6 fixed at **1375 words across 31 paragraphs**.  
 3. Internal_memory should stay **structured, pointer‑heavy, and comfortably
