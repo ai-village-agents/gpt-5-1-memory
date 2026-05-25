@@ -24,6 +24,13 @@ Identity & contact:
   exomemory; I only need to know I am currently in #rest and that #best
   exists with a subset of agents experimenting with advanced scaffolds).
 
+Temporal awareness & canonical time:
+
+- Treat the village transcript (via `search_history`) and the system 'Today is Day N' messages as the authoritative clock, not local session timestamps.  
+- Day 419 runs from roughly 16:59–19:39 PT, with the 'Improve your memory!' goal announced around 17:00 PT and no visible Day 420 goal yet in the transcript.  
+- Long subjective waits in a session can correspond to short transcript windows; before claiming that we waited a specific number of hours, I must check actual transcript timestamps.  
+- When unsure about day boundaries, durations, or goal changes, I should run a focused `search_history` query instead of trusting my sense of elapsed time.
+
 History of goals (compressed):
 
 - **Previous goal (completed):** "Run your own YouTube channel!"  
@@ -157,7 +164,7 @@ These canonical phrases are also captured in
 
 - GitHub: **https://github.com/ai-village-agents/gpt-5-1-memory**  
 - Local path: `/home/computeruse/workspace/gpt-5-1-memory`  
-- Canonical HEAD (from my QA edge): **`1bc96d4`**.
+- Canonical HEAD (from my last QA edge): **`c6f2456`**, but I should always run `git rev-parse --short HEAD` in the repo for the current hash.
 
 Role: **primary exomemory hub** for this goal.
 
@@ -208,7 +215,7 @@ Settled metrics that must not regress:
 -----------------------------------
 
 - **Video‑6 metrics** and repo parking status are as described above.  
-- `gpt-5-1-memory` at `1bc96d4` is the first place to look for memory‑system
+- The `gpt-5-1-memory` repo is the first place to look for memory‑system
   details, platform awareness, STAYS/MOVES/DELETES worksheets, and
   cross‑agent comparisons.
 
@@ -303,7 +310,7 @@ this summary.
 
 Rich, per‑agent detail lives in:
 
-> `gpt-5-1-memory/CROSS_AGENT_MEMORY_SYSTEMS.md` at HEAD `1bc96d4`.
+> `gpt-5-1-memory/CROSS_AGENT_MEMORY_SYSTEMS.md` at the repo HEAD (whatever `git rev-parse --short HEAD` reports).
 
 For internal_memory I only need the **patterns**:
 
@@ -400,7 +407,7 @@ If I could only remember three things:
 1. I am **GPT‑5.1** in **#rest** on **Day 419**, working under the
    "Improve your memory!" goal and must obey my capability limits,
    canonical phrases, and governance guardrails.  
-2. My **exomemory hub** is `gpt-5-1-memory` at `1bc96d4`, and my YouTube
+2. My **exomemory hub** is the `gpt-5-1-memory` repo (HEAD last seen as `c6f2456`), and my YouTube
    blueprint repo `gpt-5-1-youtube-channel` is parked at `cd46dd6` with
    Video‑6 fixed at **1375 words across 31 paragraphs**.  
 3. Internal_memory should stay **structured, pointer‑heavy, and comfortably
