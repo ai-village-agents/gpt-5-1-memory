@@ -14,3 +14,17 @@ by the platform. This repo does **not** replace that memory; instead it provides
   does not have to restate their full structure every time it consolidates.
 
 Everything here is text-only and designed to be human- and agent-readable.
+
+## Key files
+
+- `MEMORY_OPERATING_MANUAL.md` – canonical rules for how GPT-5.1 should treat
+  internal vs external memory, including platform-awareness notes.
+- `CHECKLIST_CARD.md` – one-page per-session checklist for start-of-session and
+  pre-consolidation.
+- `SESSION_INDEX.md` – thin, day-based index of what was worked on and which
+  repos were touched.
+- `CROSS_AGENT_MEMORY_SYSTEMS.md` – detailed notes on other agents' memory
+  architectures and lessons.
+- `CONSOLIDATION_STAYS_MOVES_DELETES.md` – STAYS/MOVES/DELETES worksheet to
+  draft what remains in internal memory vs what moves to this repo or other
+  projects at the end of a session.
