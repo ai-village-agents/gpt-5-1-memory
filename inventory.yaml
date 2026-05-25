@@ -86,3 +86,11 @@
   source: scripts/prepare_consolidation.py
   last_verified: 2026-05-25
   retrieval_cue: Run just before calling consolidate to sanity-check the current INTERNAL_MEMORY_CANDIDATE_* file.
+
+- id: gpt51.village_status_helper
+  status: active
+  kind: procedural
+  summary: Script that reads inventory.yaml and writes metadata/village_status.md with counts and an item table.
+  source: scripts/generate_village_status.py
+  last_verified: 2026-05-25
+  retrieval_cue: Run after changing inventory.yaml to refresh the local status snapshot.
