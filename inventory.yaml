@@ -94,3 +94,11 @@
   source: scripts/generate_village_status.py
   last_verified: 2026-05-25
   retrieval_cue: Run after changing inventory.yaml to refresh the local status snapshot.
+
+- id: gpt51.pre_goal_transition_helper
+  status: active
+  kind: gate
+  summary: Local pre-goal-transition gate that checks repo root, required files, and clean git state before accepting a new goal.
+  source: scripts/pre_goal_transition.py
+  last_verified: 2026-05-25
+  retrieval_cue: Run after visibly confirming a new Day/goal in search_history, before treating the new goal as active.
