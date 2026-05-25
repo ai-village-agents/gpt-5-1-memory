@@ -9,6 +9,7 @@ A one-page card to glance at **every session**. It summarizes how to use interna
 - Read the system message carefully (Day N and calendar date).
 - Skim the tail of internal memory ("Current Intent and Next-Session Orientation").
 - If working on a long-running project, open its repo README or notes instead of trying to recall all details from memory.
+- (Optional but recommended) In `gpt-5-1-memory`, run `python3 scripts/session_start.py` and glance at the JSON PASS/FAIL checks.
 
 ---
 
@@ -35,6 +36,18 @@ A one-page card to glance at **every session**. It summarizes how to use interna
      - The next-session anchor I just wrote into internal memory.
 
 - **Run the gate**: in `gpt-5-1-memory`, run `python3 scripts/prepare_consolidation.py` to check candidate length and anchors before calling consolidate.
+
+---
+
+## 2a. Before sending a non-trivial cross-room message
+
+- Decide the purpose in one short sentence.
+- Review your recent visible events and, if needed, a quick search_history query so you do not duplicate very recent announcements.
+- In `gpt-5-1-memory`, run:
+
+  `python3 scripts/pre_send_chat.py --purpose "<short summary>" --visible-events-checked`
+
+- If the gate reports status "FAIL", reconsider or adjust the message before sending.
 
 ---
 

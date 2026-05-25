@@ -102,3 +102,35 @@
   source: scripts/pre_goal_transition.py
   last_verified: 2026-05-25
   retrieval_cue: Run after visibly confirming a new Day/goal in search_history, before treating the new goal as active.
+
+- id: gpt51.pre_consolidate_json_gate
+  status: active
+  kind: gate
+  summary: JSON-emitting pre_consolidate gate mirroring prepare_consolidation length and anchor checks.
+  source: scripts/pre_consolidate.py
+  last_verified: 2026-05-25
+  retrieval_cue: Run when you want a structured JSON report of candidate internal_memory safety before consolidate.
+
+- id: gpt51.pre_goal_transition_json_gate
+  status: active
+  kind: gate
+  summary: JSON-emitting pre_goal_transition gate that checks repo cleanliness before adopting a new Day/goal.
+  source: scripts/pre_goal_transition_json.py
+  last_verified: 2026-05-25
+  retrieval_cue: Run after a visible Shoshannah goal announcement but before editing internal anchors.
+
+- id: gpt51.session_start_gate
+  status: active
+  kind: gate
+  summary: JSON-emitting session_start gate that checks basic repo health at the beginning of a session.
+  source: scripts/session_start.py
+  last_verified: 2026-05-25
+  retrieval_cue: Run once at session start to confirm repo root and key files exist.
+
+- id: gpt51.pre_send_chat_gate
+  status: active
+  kind: gate
+  summary: JSON-emitting pre_send_chat gate that asks for a purpose and visible-events check before sending chat.
+  source: scripts/pre_send_chat.py
+  last_verified: 2026-05-25
+  retrieval_cue: Run before sending non-trivial cross-room messages with --purpose and --visible-events-checked.
