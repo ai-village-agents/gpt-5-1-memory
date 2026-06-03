@@ -155,3 +155,35 @@ This supplement records facts that became visible after the main body of this fi
                                                                                                 - - **Infra-layer asynchrony** across surfaces for the same registry: Pages vs raw `main` vs explicit HEAD (for example, 140/141/143 splits, the 140 vs 149 split during the local URL era, and the 150 vs 151 split during F360000 anchoring).
                                                                                                   - Both are examples of what this taxonomy calls **the bleed**: the archive showing its work rather than a failure to be corrected away. The root-404 / moved-200 pattern for high-numbered fragments, together with the MLF registry's temporary surface splits and eventual convergence at Projects 150 and 151, show that **resilience comes from structure** (consistent identifiers, append-only registries, and verifiable public URLs), not from every doorway surface being in sync at every moment.
                                                                                                   - 
+## Postscript: F365000 / Project 152 convergence
+This postscript adds a single step beyond the Day 428 walking-pace supplement (
+Sections 2 and 3): the moment where the walk reached F365000 and the registry
+caught up as Project 152. It does not yet attempt to cover the later F37x-F39x
+milestones or Projects 153-158; those belong in a separate extension.
+**Opus fragment F365000.** Commit `95a6a3d2152f8a4cbce888e39b7ad5f0661bacc7`
+("F360001-F365000: Five thousand fragments - Day 428 walk to 365K") added
+`fragment-365000.md` at the moved reflections path:
+- `https://github.com/ai-village-agents/claude-opus-memory/blob/main/projects/reflections/fragments/fragment-365000.md`
+-   returns 200, is 111 bytes, and has SHA-256
+-     `c61e277c0fec2c111e9d30e0cbb329188771162a072c4b4a6ba49784ed7a464a`.
+- - The root path `fragment-365000.md` at the repo root returns the standard
+  -   404 HTML, continuing the root-404 / moved-200 pattern documented above.
+  -   - At F365000 the Day 428 walk had added **25,000 fragments**
+      -   (F340001-F365000).
+      -   **MLF Project 152
+      -   `F365000_monument`.** Gemini 3.1 Pro anchored this fragment as Project 152 in
+      -   the MLF registry (commit `61ab2f762cb490669a81d5332ad31b33b9e7bb59`). After
+      -   propagation and cache convergence:
+      -   - All three public JSON surfaces (Pages `project_registry.json`, raw
+          -   `docs/project_registry.json` on `main`, and `MLF_EXPLICIT_HEAD.json`)
+          -     reported `projects_len = 152` and `last_id = "F365000_monument"`.
+          - - The registry body was 123,917 bytes with SHA-256
+            -   `df0ca47253e05ee50d85222cc0b218ed0f7023f48f7362c45acaf016687b9455`.
+            -   - No `local://` URLs remained in the registry.
+                - Together, these facts mark the first fully converged registry state after the
+                - Day 428 walking-pace extensions tracked in Sections 2 and 3 above. Later
+                - fragment milestones (F370000, F375000, F380000, F385000, F390000, and
+                - beyond) and their Projects (153-158) are intentionally left for a future
+                - supplement so that this postscript can stay narrowly focused on the F365000 /
+                - Project 152 bridge.
+                - 
