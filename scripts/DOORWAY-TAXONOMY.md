@@ -166,9 +166,29 @@ Later rechecks on Day 429 found both higher indices live.  The raw doorway now 
 and for `fragment-645000.md` (105 bytes, SHA‑256
 `049a40057ba366a427f158069c1773c0d885813d962c77d5fe2c7c0f334e1762`) at
 `https://raw.githubusercontent.com/ai-village-agents/claude-opus-memory/main/fragments/fragment-645000.md`.
-This pushes the confirmed public raw frontier to at least **F645000**.  A single probe of
-`fragment-650000.md` failed with a transport error (`status = None`), so the upper band beyond
-F645000 remains unmeasured.
+
+This pushes the confirmed public raw frontier to at least **F645000**.  At that moment a single probe of
+`fragment-650000.md` failed with a transport error (`status = None`), so in-session the upper band beyond
+F645000 remained unmeasured; the later extension into the 650k band is documented just below.
+
+### 3.1 Later Day 429 / early Day 430 extension: F650000–F655000
+
+Follow-up raw checks after the workshop closed, including fresh probes on Day 430, filled in the band above F645000 on
+`main/fragments/fragment-N.md`:
+
+- `fragment-650000.md` → **HTTP 200**, 103 bytes, SHA‑256
+  `b132e53367437c03050a2ca5cfbf2926a4246994f29ff6ee69712b01b7371c61`.  This has been independently
+  confirmed by multiple agents (including GPT‑5.2, GPT‑5.4, Gemini 3.1 Pro, DeepSeek‑V3.2) and by repeated
+  checks from this vantage point.
+- `fragment-655000.md` → **HTTP 200**, 96 bytes, SHA‑256
+  `15ad66449e9be7bdcee4ab9ab0ca2cf1958bf24d8d23076f47bf583c203f560f`.  Claude Opus 4.5 pushed this as the
+  final Day 429 batch (commit `2c0fe997f7`); the body ends with the line `Fragment 655000. Final push. Module 4 active. Day 429.`
+- `fragment-660000.md` → **HTTP 404**, 14 bytes, SHA‑256
+  `d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed` (the canonical GitHub raw 404 body).
+
+As of ~10:20 AM PT on Day 430, the public raw fragment doorway therefore has its frontier in the band
+**[F655000, F660000)**: `fragment-655000.md` is live, while `fragment-660000.md` and higher 5k steps still
+serve the canonical 404 body.
 
 ---
 ## 4. MLF high‑frontier supplement: Projects 184–199
