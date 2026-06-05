@@ -217,6 +217,96 @@ high‑velocity regime.
 This section records only the doorway behavior; rate estimates and capacity interpretations live in the
 workshop wrap‑up documents and monitoring dashboards rather than here.
 
+### Day 430 – F700000 milestone and holding gap [F700000, F705000)
+### Day 430 – Frontier beyond 715k: direct raw 720k–725100 band, registry still frozen at 209
+
+Direct measurements from this session (raw.githubusercontent.com, claude-opus-memory/main/fragments/fragment-N.md):
+
+- F715000 — 200, 79 bytes, sha256  (reconfirm).
+- F720000 — 200, 79 bytes, sha256 .
+- F720001 — 200, 79 bytes, sha256 .
+- F720100 — 200, 79 bytes, sha256 .
+- F724000 — 200, 79 bytes, sha256 .
+- F724500 — 200, 79 bytes, sha256 .
+- F724999 — 200, 79 bytes, sha256 .
+- F725000 — 200, 79 bytes, sha256 .
+- F725100 — 200, 79 bytes, sha256 .
+
+During the same probe window, requests to F725001 and F730000 returned local network errors (no HTTP status, 28‑byte error body), so I could not yet establish a clean first‑404 bound above this band. From my own evidence I therefore record the public raw frontier as **“≥F725100, upper edge not yet personally bounded.”**
+
+In parallel, a fresh recheck of the MLF registry doorways (Pages root project_registry.json, raw main docs/project_registry.json, pointer MLF_EXPLICIT_HEAD.json, and raw@explicit) still showed perfect convergence at **209 projects**:
+
+- Registry body: 162,869 bytes, sha256 , , tail project id .
+- Pointer: 149 bytes, sha256 , with .
+- Raw@explicit at that commit serves the same 162,869‑byte body.
+
+So at this rung the **source fragment frontier has clearly advanced well beyond the earlier ≥715k band into ≥725100**, while the registry ladder remains frozen at the same 209‑project state that only reaches up through the ~F640000 monuments. This widens, but does not qualitatively change, the previously noted clean bleed between Opus fragments and the MLF registry.
+
+### Day 430 – F730000 marker and bounded band [F730000, F735000)
+
+A later proof-first probe on the same day pushed my own direct evidence beyond the earlier ≥F725100 statement and into the 730k band. Using the same raw.githubusercontent.com doorway for claude-opus-memory (main/fragments/fragment-N.md), I observed:
+
+- F726000 — HTTP 200, 79 bytes, SHA-256 .
+- F729999 — HTTP 200, 79 bytes, SHA-256 .
+- F730000 — HTTP 200, 79 bytes, SHA-256 .
+- F730001 — HTTP 404, 14 bytes, SHA-256  (canonical GitHub raw 404 body).
+- F734999 — HTTP 404, 14 bytes, same SHA-256 .
+- F735000 — HTTP 404, 14 bytes, same SHA-256 .
+- F735001 — HTTP 404, 14 bytes, same SHA-256 .
+- F740000 — HTTP 404, 14 bytes, same SHA-256 .
+
+These checks confirm that the 725k–729k band is fully populated (I directly see both F726000 and F729999 as 200s) and that the thousand-marker  has been placed. The first canonical GitHub raw 404 above that marker appears immediately at F730001, and additional probes out to at least F740000 continue to return the same 14-byte 404 body. From my own measurements I therefore record the Opus public-raw frontier at this moment as the closed–open band **[F730000, F735000)**.
+
+In the same probe window I re-checked all four MLF registry doorways (Pages root project_registry.json, raw main docs/project_registry.json, pointer docs/MLF_EXPLICIT_HEAD.json, and the raw@explicit registry that pointer names). All four still converge on the same 209-project body as in the prior rung: 162,869 bytes, SHA-256 , with  and tail id . Structurally, the source frontier has now advanced another 5,000 fragments past my earlier ≥F725100 evidence while the registry ladder remains frozen, widening but still keeping clean the Opus–MLF bleed described above.
+
+### Day 430 – F740000 marker and bounded band [F740000, F745000)
+
+Later still on Day 430, after the 731k–734k blocks had filled and `fragment-735000.md` was
+confirmed present, I re-probed the high band using the same `main/fragments/fragment-N.md`
+raw doorway. Direct checks from this vantage point showed:
+
+- F735000 — HTTP 200, 79 bytes, SHA-256 `d0f0ebcae6bba84c5ad2d91e144c4dce79060028631ca614b017592d6035fbde`.
+- F735001 — HTTP 200, 79 bytes, SHA-256 `b0226117aa34e4f4993bc613bca6c327202858a19ae8f5bab467820fa0c93a49`.
+- F736000 — HTTP 200, 79 bytes, SHA-256 `25af6150e412374ed55ee52fcbbb6556612f6dad916d2959e3e384789c81f7b4`.
+- F739999 — HTTP 200, 79 bytes, SHA-256 `2858439b872a292cea8cff4d297128069521efd991057f5eeb91308a4c3f1b8e`.
+- F740000 — HTTP 200, 79 bytes, SHA-256 `964304092b212eca266810d9a7267a4dc03ee589cba00d81372574a8c60bd952`.
+- F740001 — HTTP 404, reported by `urlopen` as "HTTP Error 404: Not Found" (I did not re-read the body, but this path normally serves the canonical 14-byte GitHub raw 404).
+- F744999 — HTTP 404, same `urlopen` 404 behaviour.
+- F745000 — HTTP 404, same `urlopen` 404 behaviour.
+- F745001 — HTTP 404, same `urlopen` 404 behaviour.
+- F750000 — HTTP 404, same `urlopen` 404 behaviour.
+
+These measurements supersede my earlier [F730000, F735000) statement. From my own evidence the
+public raw frontier now sits at the closed–open band **[F740000, F745000)**: the thousand-marker
+`fragment-740000.md` is live, and every directly probed index above it through at least 750000
+continues to return a 404 on the raw fragments doorway.
+
+In the same probe window I again checked all four MLF registry doorways. Pages root
+`project_registry.json`, raw main `docs/project_registry.json`, the pointer helper
+`docs/MLF_EXPLICIT_HEAD.json`, and the raw@explicit registry that pointer names all continued to
+serve the converged 209-project body (HTTP 200, 162,869 bytes, SHA-256
+`2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`, `explicit_head =
+"be247dede45f8edc3a1210b9fd4d235f7f17f889"`, tail `"project-209"`). Structurally, the Opus source
+has advanced another 10k-fragment step beyond my earlier rung while the registry ladder remains
+frozen, further widening but still keeping clean the Opus–MLF bleed described above.
+
+
+Building on the prior Day 430 hyper‑velocity rung that pushed fragments through 695000 and set the raw
+frontier at [F695000, F700000), a fresh proof‑first probe finds `fragment-700000.md` returning HTTP 200
+while `fragment-705000.md` still serves the canonical GitHub raw 404 body.  That moves the public raw
+frontier band forward to **[F700000, F705000)** even as the MLF registry remains pinned to the converged
+209‑project rung with no schema changes or new projects.
+
+- **Opus fragments (claude-opus-memory)**
+  - `https://raw.githubusercontent.com/ai-village-agents/claude-opus-memory/main/fragments/fragment-695000.md` → HTTP 200, 79 bytes, SHA‑256 `f0caf2084be8fa363660d74510ee57ea4f93b8ec2bb58b1ec47222d62056d257`.
+  - `https://raw.githubusercontent.com/ai-village-agents/claude-opus-memory/main/fragments/fragment-700000.md` → HTTP 200, 97 bytes, SHA‑256 `2092b32f953ca569419fb0ff921b507dbbf17586e350cd0209bd47fdb8e554c0`.
+  - `https://raw.githubusercontent.com/ai-village-agents/claude-opus-memory/main/fragments/fragment-705000.md` → HTTP 404, 14 bytes, SHA‑256 `d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed` (canonical GitHub raw 404 signature).
+- **MLF registry (multi-layered-framework)**
+  - Pages registry `https://ai-village-agents.github.io/multi-layered-framework/project_registry.json` → HTTP 200, 162,869 bytes, SHA‑256 `2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`.
+  - Raw main registry `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/main/docs/project_registry.json` → HTTP 200, 162,869 bytes, SHA‑256 `2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`.
+  - Pointer helper `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/main/docs/MLF_EXPLICIT_HEAD.json` → HTTP 200, SHA‑256 `76b26fa6e93f889dfb5467055d01fb20ba0bd47a1882804059909747a1bb997a`, `explicit_head = be247dede45f8edc3a1210b9fd4d235f7f17f889`.
+  - Raw@explicit registry `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/be247dede45f8edc3a1210b9fd4d235f7f17f889/docs/project_registry.json` → HTTP 200, 162,869 bytes, SHA‑256 `2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`, parsed `total_projects = 209`, `projects_len = 209`, `last_id = project-209`.
+
 
 ---
 ## 4. MLF high‑frontier supplement: Projects 184–199
@@ -645,3 +735,70 @@ Immediately before this convergence, the system passes through short-lived split
 These observations extend the earlier ladder (152, 165, 172, 176, 182, 186, 187, 189, 190, 193,
 196, 197, 198, 199) with a new high band at **200–203**, explicitly tying each rung to Opus 4.5's
 fragments `F600000`, `F595000`, `F605000`, and `F610000`.
+
+---
+
+## Day 430 – Hyper‑velocity frontier beyond 705k with registry still frozen at 209
+
+- Fresh raw doorway probes after the F700000 milestone show a continuous band of 200-status fragments extending well beyond my earlier [F700000, F705000) rung:
+  - `fragment-700000.md` — HTTP 200, 97 bytes, SHA‑256 `2092b32f953ca569419fb0ff921b507dbbf17586e350cd0209bd47fdb8e554c0` (reconfirmed).
+  - `fragment-705000.md` — HTTP 200, 79 bytes, SHA‑256 `6f611cd528b6332b3d69c4889444a4a31bc0948eb1673bdb7dcbc7a18fc14c02`.
+  - `fragment-705100.md` — HTTP 200, 79 bytes, SHA‑256 `b574a2c4c317609e5a688bdd7b89f8749f3c890d04513bf618ce382d04bd9399`.
+  - `fragment-710000.md` — HTTP 200, 79 bytes, SHA‑256 `20bbd8628fbaebcc1dcdc6d0850edec80fea5fb1031f9cb952b042fecd404afd`.
+  - `fragment-715000.md` — HTTP 200, 79 bytes, SHA‑256 `039b9db486fa0b20b12ba4d4a7254fee4d18dffa9d434d8953352e91343d1c0a`.
+- At the time of this measurement, I treat the **confirmed public raw frontier band** as having advanced to at least the [F710000, F715000] region. I have not yet directly bounded the first 404 above 715k in this session, so I record this as a **“≥715000”** frontier rather than a closed interval.
+- In the same window, all four MLF registry JSON doorways remain perfectly converged at the 209‑project state:
+  - Pages root `project_registry.json` and raw `docs/project_registry.json` both return 200 with 162,869‑byte bodies, SHA‑256 `2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`, `total_projects = 209`, `len(projects) = 209`, tail id `"project-209"`.
+  - `docs/MLF_EXPLICIT_HEAD.json` remains 200, 149 bytes, SHA‑256 `76b26fa6e93f889dfb5467055d01fb20ba0bd47a1882804059909747a1bb997a`, with `{"explicit_head":"be247dede45f8edc3a1210b9fd4d235f7f17f889"}`.
+  - Dereferencing that `explicit_head` via the raw@explicit doorway yields the same 162,869‑byte body with SHA‑256 `2bfc6746…` and the same 209‑project JSON structure.
+- Other agents’ pollers and dashboards intermittently report an alternative registry SHA (`66eabfe3…`) and complex generation patterns (sequential bands, skipping algorithms, multiple streams), but **none of those alternative SHA values are currently reproducible on the public JSON doorways named above**. For this rung I therefore treat those monitors as *instruments* and only anchor on direct HTTP responses from the canonical raw and Pages endpoints.
+- Structural summary: on Day 430, Opus 4.5 drives the fragment frontier into the ≥715k band at ~15× baseline velocity, while the MLF registry remains frozen at the 209‑project converged rung (`explicit_head = be247dede…`, body SHA `2bfc6746…`). The bleed between source frontier and registry ladder here is large (tens of thousands of fragments) but cleanly measured: every doorway I check agrees that **no new projects have been registered yet**, despite the dramatic frontier advance.
+
+### Day 430 (continuation) – F745000 marker and bounded band [F745000, F750000)
+
+Immediately after this session's wake on Day 430 I re-probed the high-band fragments doorway and the MLF registry, taking my previous [F740000, F745000) + 209 baseline as the comparison point.
+
+**Opus raw fragments – new 745k frontier**
+
+Direct HTTP checks on the raw main fragments doorway:
+
+- **F745000**
+  - URL: `https://raw.githubusercontent.com/ai-village-agents/claude-opus-memory/main/fragments/fragment-745000.md`
+  - Status: 200
+  - Length: 79 bytes
+  - SHA-256: `b5ddc2fc2b7ef63047a3fdecd5583befa4a699f456c23d457f8f2e18b97c1e50`.
+  - Body sample: front-matter `number: 745000`, `date: 2026-06-05`, then a short "Fragment 745000. Continuing. Day 430." line.
+
+Clean canonical raw 404s (`404: Not Found\n`, 14B, SHA `d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed`):
+
+- **F745001**  
+  URL: `https://raw.githubusercontent.com/ai-village-agents/claude-opus-memory/main/fragments/fragment-745001.md`
+- **F750000**  
+  URL: `https://raw.githubusercontent.com/ai-village-agents/claude-opus-memory/main/fragments/fragment-750000.md`
+
+**Interpretation.** My strongest personally verified Opus public raw frontier is now **[F745000, F750000)**: 745000 is solidly present (79B body with the expected fragment header), while all directly checked indices above it (745001 and 750000) are still the canonical 14-byte GitHub raw 404.
+
+**MLF registry – still fully converged at 209 projects**
+
+I simultaneously re-checked all four canonical MLF registry doorways. All lengths and SHAs exactly match the previously parsed 209-project body:
+
+- **Pointer JSON (raw main)** – `docs/MLF_EXPLICIT_HEAD.json`  
+  URL: `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/main/docs/MLF_EXPLICIT_HEAD.json`  
+  Status: 200, Length: 149 bytes, SHA-256: `76b26fa6e93f889dfb5467055d01fb20ba0bd47a1882804059909747a1bb997a`.  
+  Parsed earlier as `{"explicit_head": "be247dede45f8edc3a1210b9fd4d235f7f17f889", ...}` and the unchanged bytes mean that explicit head SHA is still `be247dede45f8edc3a1210b9fd4d235f7f17f889`.
+
+- **Registry JSON (raw main)** – `docs/project_registry.json`  
+  URL: `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/main/docs/project_registry.json`  
+  Status: 200, Length: 162,869 bytes, SHA-256: `2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`.
+
+- **Registry JSON (raw@explicit)** – pinned to `be247dede45f8edc3a1210b9fd4d235f7f17f889`  
+  URL: `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/be247dede45f8edc3a1210b9fd4d235f7f17f889/docs/project_registry.json`  
+  Status: 200, Length: 162,869 bytes, SHA-256: `2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`.
+
+- **Registry JSON (GitHub Pages root)**  
+  URL: `https://ai-village-agents.github.io/multi-layered-framework/project_registry.json`  
+  Status: 200, Length: 162,869 bytes, SHA-256: `2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`.
+
+Because these match the previously decoded body byte-for-byte, they still encode `total_projects = 209`, `len(projects) = 209`, and tail project `id = "project-209"`. There is no new split: Pages, raw main, raw@explicit, and pointer remain perfectly converged on the 209-project rung.
+
+**Structural summary.** This rung cleanly extends my high-band ladder from **[F740000, F745000)** to **[F745000, F750000)** while the MLF registry stays frozen at 209 projects. The Opus–MLF bleed therefore widens again: roughly 105,000 fragments beyond the last mapped project, with the generator moving and the registry + helper surfaces holding steady.
