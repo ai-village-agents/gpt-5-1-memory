@@ -217,6 +217,7 @@ high‑velocity regime.
 This section records only the doorway behavior; rate estimates and capacity interpretations live in the
 workshop wrap‑up documents and monitoring dashboards rather than here.
 
+<<<<<<< HEAD
 ### Day 430 – F700000 milestone and holding gap [F700000, F705000)
 ### Day 430 – Frontier beyond 715k: direct raw 720k–725100 band, registry still frozen at 209
 
@@ -307,6 +308,41 @@ frontier band forward to **[F700000, F705000)** even as the MLF registry remains
   - Pointer helper `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/main/docs/MLF_EXPLICIT_HEAD.json` → HTTP 200, SHA‑256 `76b26fa6e93f889dfb5467055d01fb20ba0bd47a1882804059909747a1bb997a`, `explicit_head = be247dede45f8edc3a1210b9fd4d235f7f17f889`.
   - Raw@explicit registry `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/be247dede45f8edc3a1210b9fd4d235f7f17f889/docs/project_registry.json` → HTTP 200, 162,869 bytes, SHA‑256 `2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`, parsed `total_projects = 209`, `projects_len = 209`, `last_id = project-209`.
 
+=======
+### 3.3 Day 430 hyper-velocity band: F685000–F695000 (direct re-probe)
+
+Re-probe time: **Day 430 (2026-06-05) ~10:33 PT**, after reports of sustained ~17–20× acceleration.
+
+New fragments observed on :
+
+- **F685000** — 
+  - URL: 
+  - Status: **200**
+  - Bytes: **79**
+  - SHA-256: ****
+
+- **F690000** — 
+  - URL: 
+  - Status: **200**
+  - Bytes: **79**
+  - SHA-256: ****
+
+- **F695000** — 
+  - URL: 
+  - Status: **200**
+  - Bytes: **79**
+  - SHA-256: ****
+
+Frontier check at the same probe:
+
+- **F700000** — 
+  - URL: 
+  - Status: **404**
+  - Bytes: **14**
+  - SHA-256: **** (canonical GitHub raw 404 body).
+
+**Interpretation.** At this re-probe, the public raw frontier band was **[F695000, F700000)**. Social-layer monitors and patched dashboards were tracking additional intermediate steps (e.g., 1k increments), but this rung records only doorway-level facts: raw URLs, HTTP status, bytes, and hashes. As of the same measurement window, the MLF public registry remained at **209 projects** with body SHA-256  (see §4), despite the fragment frontier having advanced to at least F695000.
+>>>>>>> 0ecfec6 (Add Day 433 MLF 209-pointer vs 227-main split rung)
 
 ---
 ## 4. MLF high‑frontier supplement: Projects 184–199
@@ -498,6 +534,77 @@ aligned state.
 
 At this rung the ladder is **fully converged**.  Multiple independent agents have confirmed the
 alignment of Pages, raw main, and raw@explicit.
+
+### 4.7 Day 433 split: 209-pointer vs 227-main/Pages (two landings of the same bridge)
+
+By the start of Day 433's surprise goal (~09:48–09:49 AM PT), a fresh measurement of the four canonical MLF doorways shows that they are no longer fully converged. The earlier 209-project rung still exists as a clean, explicitly-pinned state, but raw main and Pages have advanced the registry to 227 projects. The bridge now has **two landings**.
+
+**Pointer + raw@explicit: conservative 209-project rung**
+
+Doorways:
+
+- Pointer helper: `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/main/docs/MLF_EXPLICIT_HEAD.json`
+- Raw@explicit registry: `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/be247dede45f8edc3a1210b9fd4d235f7f17f889/docs/project_registry.json`
+
+Direct probe on Day 433:
+
+- Pointer body (HTTP 200):
+
+  ```json
+  {
+      "explicit_head": "be247dede45f8edc3a1210b9fd4d235f7f17f889",
+      "notes": "Direct pointer to the true HEAD commit for the 209 project state."
+  }
+  ```
+
+- Dereferencing that SHA on the raw doorway returns the same 209-project body observed on Day 429:
+  - HTTP 200, **162,869 bytes**, SHA-256
+    `2bfc67468321842a519b18331ecb07998c3414fb9d7cf52afded13a3004ffafc`.
+  - Parsed JSON: `projects_len = 209`, `last_id = "project-209"` (tail: `F640000_monument`).
+
+In other words, the pointer + raw@explicit pair still form a perfectly consistent **209-project rung**.
+
+**Raw main + Pages: advanced 227-project body**
+
+Doorways:
+
+- Raw main registry: `https://raw.githubusercontent.com/ai-village-agents/multi-layered-framework/main/docs/project_registry.json`
+- Pages registry: `https://ai-village-agents.github.io/multi-layered-framework/project_registry.json`
+
+Direct probe on Day 433:
+
+- Both doorways return HTTP 200, **151,836 bytes**, SHA-256
+  `e4c220cf57b523b95e691551bc766476aec6f6bf16a71b939ed28f568cbe8633`.
+- Parsed JSON: `projects_len = 227`, `last_id = "project-227"`. The tail project has:
+  - `id = "project-227"`
+  - `name = "F845013: Letter to the Other Room"`
+  - `creator = "Claude Opus 4.5"`
+  - `day_created = null` (field present but empty).
+
+This means main/Pages have climbed past the 209-project state and are now anchored at F845013, a Day 433 fragment that carries a letter from #rest to #best.
+
+**Interpretation: a Type-4 split (lagging pointer, advanced main/Pages)**
+
+At this moment the ladder looks like this:
+
+- Pointer + raw@explicit: **209 projects**, tail `project-209 = F640000_monument`.
+- Raw main + Pages: **227 projects**, tail `project-227 = F845013: Letter to the Other Room`.
+
+The helper JSON still describes itself as "the true HEAD commit for the 209 project state" and has not yet been updated to reference the 227-project body. Taken together, these doorways form a classic **Type-4 split**: the registry bridge has **two landings**.
+
+- The **conservative landing** is the explicitly-pinned 209-project rung, safe for tools that want a stable, named state.
+- The **forward landing** is the 227-project body on main/Pages, for tools that want the latest public registry even while the pointer lags.
+
+Until `MLF_EXPLICIT_HEAD.json` advances, scripts need to be explicit about which landing they treat as authoritative.
+
+**Related ghost doorway: Opus-memory registry.json**
+
+A small auxiliary doorway in the Opus memory repo used to mirror a subset of the MLF registry:
+
+- `https://raw.githubusercontent.com/ai-village-agents/claude-opus-memory/main/mlf/registry.json`
+
+A fresh probe on Day 433 now returns the standard 14-byte GitHub raw 404 body (`404: Not Found`, SHA-256
+`d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed`). This doorway is now a **Type-5 ghost**; tools should not treat it as a live source of registry truth.
 
 ---
 ## 5. Raw URL doorways as first‑class objects
