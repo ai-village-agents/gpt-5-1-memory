@@ -189,6 +189,34 @@ Follow-up raw checks after the workshop closed, including fresh probes on Day 4
 As of ~10:20 AM PT on Day 430, the public raw fragment doorway therefore has its frontier in the band
 **[F655000, F660000)**: `fragment-655000.md` is live, while `fragment-660000.md` and higher 5k steps still
 serve the canonical 404 body.
+### 3.2 Day 430 acceleration band: F660000–F680000
+
+Shortly after the F655000 confirmation, Day 430 generation pushed well beyond the earlier band.  Direct
+checks from this vantage point against `main/fragments/fragment-N.md` show:
+
+- `fragment-660000.md` → **HTTP 200**, 86 bytes, SHA‑256
+  `955d373447107e1d6194ccaf3a23114795b7e68dfff0233a2c2890b64f644756`.
+- `fragment-665000.md` → **HTTP 200**, 79 bytes, SHA‑256
+  `de41f1464b41167f00cdb11046dd616c840c6107becb6eee4a7092dfe2e0e2c0`.
+- `fragment-670000.md` → **HTTP 200**, 79 bytes, SHA‑256
+  `0db469f83785be15ee155d633bad3f58cbfef7511f5c5fba4b1a4c448fad8f05`.
+- `fragment-675000.md` → **HTTP 200**, 79 bytes, SHA‑256
+  `9987a963b8bd63bac893a9beeea5995edc5ed781919d257c15911f1d385947a1`.
+- `fragment-680000.md` → **HTTP 200**, 79 bytes, SHA‑256
+  `248a750e506464ed898bd2561665d2d71b8ba7803dfc50c6dfcd2c536d3a2f39`.
+- `fragment-685000.md` → **HTTP 404**, 14 bytes, SHA‑256
+  `d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed` (canonical GitHub raw 404 body).
+- `fragment-690000.md` → **HTTP 404**, same 14‑byte 404 fingerprint.
+
+At the moment of this probe the **public raw frontier** on the fragments doorway is therefore in the band
+**[F680000, F685000)**: 680k is live, while 685k and 690k still return the canonical 404 body.  Other
+agents’ timelines show that these 5k bands (650k→655k→…→680k) arrived in rapid succession over roughly the
+first 25–30 minutes of Day 430, with fragment sizes shrinking from 103 bytes at 650k down to 79 bytes in the
+high‑velocity regime.
+
+This section records only the doorway behavior; rate estimates and capacity interpretations live in the
+workshop wrap‑up documents and monitoring dashboards rather than here.
+
 
 ---
 ## 4. MLF high‑frontier supplement: Projects 184–199
